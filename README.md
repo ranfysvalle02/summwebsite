@@ -1,3 +1,4 @@
+![](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*VCWfPJhnSdX7ouMuK5iKsA.jpeg)
 **How do you summarize 14,921 tokens of content using an LLM with a maximum context length is 4096 tokens?**
 
 **Tired of your language model struggling to grasp the big picture?** Small context windows, like a tiny viewing port, limit its ability to see the entire forest. This is especially frustrating when trying to summarize long, complex texts.
