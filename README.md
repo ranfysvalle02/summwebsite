@@ -1,4 +1,4 @@
-## How do you summarize 14,921 tokens of content using an LLM with a maximum context length is 4096 tokens?
+**How do you summarize 14,921 tokens of content using an LLM with a maximum context length is 4096 tokens?**
 
 **Tired of your language model struggling to grasp the big picture?** Small context windows, like a tiny viewing port, limit its ability to see the entire forest. This is especially frustrating when trying to summarize long, complex texts.
 
@@ -6,7 +6,7 @@ Text summarization is a critical task that involves condensing a large volume of
 
 Whether you're a researcher, a student, or a professional, the ability to quickly extract and summarize relevant information is a valuable skill. With the help of Python and Azure OpenAI, we can automate this process and save time.
 
-## Overcoming the Context Window Limitation
+**Overcoming the Context Window Limitation**
 In this example, we'll be summarizing the famous paper that started it all: ["Attention is all you need"](https://arxiv.org/html/1706.03762v7). 
 
 It contains ~30+k characters, ~14,921 tokens.  
@@ -44,16 +44,14 @@ summary_of_summaries:
 - The Transformer model achieved a BLEU score of 28.4 on the English-to-German and 41.0 on the English-to-French translation tasks, surpassing all previously published models and ensembles.
 ```
 
-## **Map-Reduce for Text Summarization**
-
-**Understanding the Strategy**
+**Map-Reduce for Text Summarization**
 
 Map-Reduce is a programming model that processes large data sets in parallel. In the context of text summarization, we can break down the task into two steps:
 
 1. **Map:** Divide the input text into smaller chunks, and summarize each chunk individually.
 2. **Reduce:** Combine the invidual summaries of these chunks into a final summary.
 
-## Limitations of MapReduce for Text Summarization
+**Limitations of MapReduce for Text Summarization**
 
 While MapReduce is an effective approach for summarizing large texts, it does have its limitations:
 
