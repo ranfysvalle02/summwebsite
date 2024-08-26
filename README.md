@@ -53,6 +53,14 @@ Map-Reduce is a programming model that processes large data sets in parallel. In
 1. **Map:** Divide the input text into smaller chunks, and summarize each chunk individually.
 2. **Reduce:** Combine the invidual summaries of these chunks into a final summary.
 
+## Limitations of MapReduce for Text Summarization
+
+While MapReduce is an effective approach for summarizing large texts, it does have its limitations:
+
+* **Context Loss:** Breaking down text into smaller chunks can lead to loss of context, as each chunk may not contain enough information to fully understand the overall meaning.
+* **Overreliance on LLM:** The quality of the summary ultimately depends on the capabilities of the LLM used for summarization. If the LLM is not able to effectively capture the key points of the text, the summary will be suboptimal.
+* **Potential for Redundancy:** When combining summaries from different chunks, there may be some redundancy or overlap in the information presented.
+
 **Gearing Up for the Adventure**
 
 Before we set off, let's gather our supplies:
