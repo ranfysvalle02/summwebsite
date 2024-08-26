@@ -6,6 +6,38 @@ Text summarization is a critical task that involves condensing a large volume of
 
 Whether you're a researcher, a student, or a professional, the ability to quickly extract and summarize relevant information is a valuable skill. With the help of Python and Azure OpenAI, we can automate this process and save time.
 
+## Summarizing the `Attention is all you need` paper
+In this example, we'll be summarizing the famous paper that started it all: ["Attention is all you need"](https://arxiv.org/html/1706.03762v7). It contains ~30+k characters, ~14,921 tokens. And we'll be summarizing it using `gpt-3.5-turbo` which has a context window limitation of **4096**
+
+```
+<Response [200]>
+total tokens: 14921
+6
+Starting to process chunk at index 0; chunk_size=2218
+Starting to process chunk at index 1; chunk_size=2691
+Starting to process chunk at index 4; chunk_size=2684
+Starting to process chunk at index 3; chunk_size=3488
+Starting to process chunk at index 2; chunk_size=2981
+Starting to process chunk at index 5; chunk_size=865
+Finished processing chunk at index 4
+Finished processing chunk at index 5
+Finished processing chunk at index 1
+Finished processing chunk at index 0
+Finished processing chunk at index 3
+Finished processing chunk at index 2
+summary_of_summaries:
+- The Transformer is a neural network model architecture that relies solely on attention mechanisms to draw global dependencies between input and output, dispensing with recurrence and convolutions entirely.
+- The model is composed of a stack of identical encoder and decoder layers that employ either multi-head self-attention or a simple, position-wise fully connected feed-forward network.
+- The model achieves state-of-the-art results on English-to-German and English-to-French machine translation tasks and generalizes well to other tasks like English constituency parsing.
+- Self-attention layers are faster and more parallelizable than recurrent layers for sequence transduction tasks.
+- The model uses position-wise feed-forward networks and sinusoidal positional encoding for token conversion and sequence order encoding, respectively.
+- The Transformer model is superior in quality and time efficiency compared to previous state-of-the-art sequence transduction models and is able to utilize parallel computation.
+- The authors demonstrate the effectiveness of pre-training the model on large amounts of monolingual data before fine-tuning it on smaller supervised tasks.
+- The models are optimized and trained using batching, Adam optimizer with residual dropout and label smoothing techniques.
+- The Transformer architecture has had a significant impact in the field of natural language processing.
+- The Transformer model achieved a BLEU score of 28.4 on the English-to-German and 41.0 on the English-to-French translation tasks, surpassing all previously published models and ensembles.
+```
+
 ## **Map-Reduce for Text Summarization**
 
 **Understanding the Strategy**
