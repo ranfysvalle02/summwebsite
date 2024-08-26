@@ -135,8 +135,7 @@ REMEMBER! YOUR GOAL IS TO SUMMARIZE THE CONTENT OF THE WEBSITE IN A WAY THAT THE
         {"role": "user", "content": str(chunk)},
         {"role": "user", "content": """
 [response format]
-JSON object with `web_summary` key with RAW HTML MARKDOWN STRING.
-web_summary should be in bullet list, valid markdown format [RAW HTML MARKDOWN STRING]
+should be in bullet list, valid markdown format. IMPORTANT! must be valid markdown string!
 Max. 3 sentences per bullet point.
 Max. 10 bullet points.
 Min. 5 bullet points.
@@ -154,13 +153,12 @@ Min. 5 bullet points.
 """}
     ]
     ai_response = az_client.chat.completions.create(
-        model="gpt-4o",
+        model="gpt-35-turbo",
         messages=msgs2send,
-        response_format={"type": "json_object"}
     )
-    tmp_sum = json.loads(ai_response.choices[0].message.content.strip())
+    tmp_sum = str(ai_response.choices[0].message.content.strip())
     print(f"Finished processing chunk at index {chunks.index(chunk)}")
-    return tmp_sum['web_summary']
+    return tmp_sum
 ```
 
 This function takes a chunk of text as input, sends it to the LLM for processing, and extracts the returned summary.
@@ -183,15 +181,14 @@ This significantly speeds things up, especially for lengthy webpages.
 ```python
 # Summarize the summaries
 summary_of_summaries = az_client.chat.completions.create(
-    model="gpt-4o",
+    model="gpt-35-turbo",
     messages=[
         {"role":"system", "content":"You are a helpful assistant who can strategically summarize multiple summaries together into one coherent summary."},
         {"role": "user", "content": "[summaries]"},
         {"role": "user", "content": str(summaries)},
         {"role": "user", "content": """
 [response format]
-JSON object with `web_summary` key with MARKDOWN STRING.
-web_summary should be in bullet list, valid markdown format [web_summary=MARKDOWN STRING]
+Summary should be in bullet list, valid markdown format. IMPORTANT! must be valid markdown string!
 Max. 3 sentences per bullet point.
 Max. 10 bullet points.
 Min. 5 bullet points.
@@ -209,13 +206,10 @@ Min. 5 bullet points.
     - Please provide a complete, comprehensive summary using the individual summaries provided in [summaries]
 """}
     ],
-    response_format={"type": "json_object"}
 )
 print("summary_of_summaries:")
 print(
-    json.loads(
-        summary_of_summaries.choices[0].message.content.strip()
-    ).get('web_summary')
+    summary_of_summaries.choices[0].message.content.strip()
 )
 ```
 
@@ -241,7 +235,7 @@ AZURE_OPENAI_ENDPOINT = ""
 AZURE_OPENAI_API_KEY = "" 
 az_client = AzureOpenAI(azure_endpoint=AZURE_OPENAI_ENDPOINT,api_version="2023-07-01-preview",api_key=AZURE_OPENAI_API_KEY)
 
-r = requests.get('https://thenewstack.io/devs-slash-years-of-work-to-days-with-genai-magic/')
+r = requests.get('https://arxiv.org/html/1706.03762v7')
 # Parsing the HTML
 soup = BeautifulSoup(r.content, 'html.parser')
 RAW_HTML = soup.get_text()
@@ -270,8 +264,7 @@ REMEMBER! YOUR GOAL IS TO SUMMARIZE THE CONTENT OF THE WEBSITE IN A WAY THAT THE
         {"role": "user", "content": str(chunk)},
         {"role": "user", "content": """
 [response format]
-JSON object with `web_summary` key with RAW HTML MARKDOWN STRING.
-web_summary should be in bullet list, valid markdown format [RAW HTML MARKDOWN STRING]
+should be in bullet list, valid markdown format. IMPORTANT! must be valid markdown string!
 Max. 3 sentences per bullet point.
 Max. 10 bullet points.
 Min. 5 bullet points.
@@ -289,13 +282,12 @@ Min. 5 bullet points.
 """}
     ]
     ai_response = az_client.chat.completions.create(
-        model="gpt-4o",
+        model="gpt-35-turbo",
         messages=msgs2send,
-        response_format={"type": "json_object"}
     )
-    tmp_sum = json.loads(ai_response.choices[0].message.content.strip())
+    tmp_sum = str(ai_response.choices[0].message.content.strip())
     print(f"Finished processing chunk at index {chunks.index(chunk)}")
-    return tmp_sum['web_summary']
+    return tmp_sum
 
 # Use ThreadPoolExecutor to parallelize the summarization
 with concurrent.futures.ThreadPoolExecutor() as executor:
@@ -303,15 +295,14 @@ with concurrent.futures.ThreadPoolExecutor() as executor:
 
 # Summarize the summaries
 summary_of_summaries = az_client.chat.completions.create(
-    model="gpt-4o",
+    model="gpt-35-turbo",
     messages=[
         {"role":"system", "content":"You are a helpful assistant who can strategically summarize multiple summaries together into one coherent summary."},
         {"role": "user", "content": "[summaries]"},
         {"role": "user", "content": str(summaries)},
         {"role": "user", "content": """
 [response format]
-JSON object with `web_summary` key with MARKDOWN STRING.
-web_summary should be in bullet list, valid markdown format [web_summary=MARKDOWN STRING]
+Summary should be in bullet list, valid markdown format. IMPORTANT! must be valid markdown string!
 Max. 3 sentences per bullet point.
 Max. 10 bullet points.
 Min. 5 bullet points.
@@ -329,13 +320,10 @@ Min. 5 bullet points.
     - Please provide a complete, comprehensive summary using the individual summaries provided in [summaries]
 """}
     ],
-    response_format={"type": "json_object"}
 )
 print("summary_of_summaries:")
 print(
-    json.loads(
-        summary_of_summaries.choices[0].message.content.strip()
-    ).get('web_summary')
+    summary_of_summaries.choices[0].message.content.strip()
 )
 ```
 
