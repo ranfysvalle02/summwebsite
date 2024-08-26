@@ -8,6 +8,7 @@ Text summarization is a critical task that involves condensing a large volume of
 Whether you're a researcher, a student, or a professional, the ability to quickly extract and summarize relevant information is a valuable skill. With the help of Python and Azure OpenAI, we can automate this process and save time.
 
 **Overcoming the Context Window Limitation**
+
 In this example, we'll be summarizing the famous paper that started it all: ["Attention is all you need"](https://arxiv.org/html/1706.03762v7). 
 
 It contains ~30+k characters, ~14,921 tokens.  
