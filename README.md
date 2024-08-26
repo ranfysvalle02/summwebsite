@@ -9,7 +9,11 @@ Whether you're a researcher, a student, or a professional, the ability to quickl
 ## Overcoming the Context Window Limitation
 In this example, we'll be summarizing the famous paper that started it all: ["Attention is all you need"](https://arxiv.org/html/1706.03762v7). 
 
-It contains ~30+k characters, ~14,921 tokens. And we'll be summarizing it using `gpt-3.5-turbo` which has a context window limitation of **4096**
+It contains ~30+k characters, ~14,921 tokens.  
+
+We'll be summarizing it using `gpt-3.5-turbo` which has a context window limitation of **4096**
+
+The output is below:
 
 ```
 <Response [200]>
