@@ -347,5 +347,5 @@ If you encounter any roadblocks during your journey, check these points:
 
 * [Python Documentation](https://docs.python.org/3/)
 * [BeautifulSoup Documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-* [Azure OpenAI Documentation](https://azure.microsoft.com/en-us/services/openai/)
+* [Azure OpenAI Documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
 * [concurrent.futures Documentation](https://docs.python.org/3/library/concurrent.futures.html)
