@@ -1,6 +1,6 @@
 ## How do you summarize a website with 14,921 tokens of content using an LLM with a maximum context length is 4096 tokens.
 
-**Tired of your language model struggling to grasp the big picture?** Traditional context windows, like a tiny viewing port, limit its ability to see the entire forest. This is especially frustrating when trying to summarize long, complex texts.
+**Tired of your language model struggling to grasp the big picture?** Small context windows, like a tiny viewing port, limit its ability to see the entire forest. This is especially frustrating when trying to summarize long, complex texts.
 
 Text summarization is a critical task that involves condensing a large volume of text into a concise summary. This blog post will delve into a Python code snippet that employs a map-reduce strategy to summarize web content using a large language model.
 
